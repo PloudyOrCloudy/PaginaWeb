@@ -7,7 +7,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 		<style>
 			body {
-				font-family: "DM Sans", sans-serif;
+				font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
 				line-height: 1.6;
 				font-size: 17px;
 				color: #e8edf5;
@@ -20,18 +20,25 @@
 				background-attachment: fixed;
 			}
 			h1, h2 {
-				font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
 				font-weight: 600;
 				line-height: 1.2;
 			}
 			h1 {color: #f1f4fa; font-size: 2.25rem;}
 			h2 {font-size: 1.55rem;}
+			img {
+				border: 1px solid rgba(177, 224, 238, 0.62);
+				border-radius: 8px;
+				box-shadow: 0 0 0 3px rgba(77, 157, 182, 0.13), 0 10px 28px rgba(0, 0, 0, 0.32);
+			}
 			body > h2 {text-align: center;}
 			p {max-width: 900px; margin-right: auto; margin-left: auto; text-align: center;}
 			.introduccion {display: flex; align-items: center; gap: 24px; max-width: 1000px; margin: 0 auto;}
+            .comentario {display: flex; align-items: center; gap: 12px; max-width: 1000px; margin: 0 auto;}
 			.introduccion img {width: 240px; max-width: 100%; height: auto; object-fit: contain;}
 			.introduccion-texto {flex: 1; text-align: center;}
+			.introduccion-texto > h1, .introduccion-texto > h2, .introduccion-texto > p {text-align: center;}
 			.introduccion-texto h2 {margin-top: 0;}
+			.cuerpo p {font-weight: normal;}
 			.cuerpo img {display: block; margin: 0 auto;}
             .explicacion img {display: block; margin: 0 auto;}
 			@media (max-width: 600px) {
@@ -41,27 +48,32 @@
 		</style>
 	</head>
 	<body>
-		<h1>Porque el Francio es menos reactivo con el agua que el Casio</h1>
 		<section class="introduccion">
 			<img src="Francio.jpg" alt="Muestra de francio" title="Francio">
 			<div class="introduccion-texto">
-				<p>34</p>
-				<h2>Aunque por norma general nos enseñan que cuanto mas bajes en un grupo mas reactivo se vuelve un elemento con respecto a las caracteristicas comunes con el resto del grupo, hay otros factores que cuan graned sea el elemento que influye en su reactividad. Debido a esto, el Casio es el alcalino más reactivo conocido.<em>(2017)</em> de Paul Auster</h2>
-				<p>Y porqué sucede esto?</p>
-				<p>Pues el número de electrones no solo determina la reactividad, sino también otras propiedades químicas del elemento. Por ejemplo, el Francio, aunque tiene una configuración electrónica similar a otros metales alcalinos, presenta una reactividad menor debido a su tamaño atómico lo cual genera repulsion entre los electrones, aumentando el radio y disminuyendo la fuerza de atracción nuclear.</p>
+                <h1>¿Es el francio menos reactivo con el agua que el cesio?</h1>
+				<h2>El francio (Fr) es el elemento 87 y pertenece al grupo de los metales alcalinos. En este grupo, la reactividad suele aumentar al descender porque el electrón externo está, en promedio, más alejado del núcleo y se puede perder con mayor facilidad. El cesio es el metal alcalino estable más reactivo observado; en cambio, el francio es tan escaso y radiactivo que su reacción con el agua no se ha podido medir directamente en condiciones comparables.</h2>
+				<p>Entonces, ¿qué se puede decir sobre la reactividad del francio?</p>
+				<p>La tendencia periódica permite predecir que el francio sería muy reactivo, pero su posición al final del grupo no basta para establecer con certeza si reacciona con el agua más rápido que el cesio. En un átomo tan pesado, los efectos relativistas modifican la energía y la distribución de los electrones; los cálculos teóricos consideran estos efectos al estimar sus propiedades. Por eso, es más preciso presentar la comparación como una predicción, no como un resultado experimental confirmado.</p>
 			</div>
 		</section>
-	  	<h2>Con el aumento del radio se distorsionan los orbitales</h2>
+	  	<h2>El tamaño atómico y la distribución de los orbitales</h2>
 	 	<section class="cuerpo">
-            <p>Para empezar, un orbital atómico es un espacio donde es probable encontrar un electrón. Su forma esta dada con la fórmula de Schrödinger y, lo interesante, esque cuanto mas radio tenga un átomo, lo orbitales se distorsionan.</p>
+			<p>Un orbital atómico describe la distribución de probabilidad de encontrar un electrón alrededor del núcleo; no representa una trayectoria fija. Sus formas y energías se obtienen al resolver la ecuación de Schrödinger para el átomo. Al aumentar el número de capas electrónicas, suele crecer el radio atómico, pero esto no significa que el tamaño por sí solo deforme todos los orbitales: la carga nuclear, el apantallamiento y las interacciones entre electrones también influyen.</p>
 	    <img src="FormulaSchodinger.png" alt="Fórmula de Schrödinger">
         </section>
-        <h2>¿Por qué se distorsionan los orbitales?</h2>
+        <h2>¿Cómo influyen los efectos relativistas en los orbitales?</h2>
 	    <section class="explicacion">
-            <p>En el año <em>1919</em>, Albert Einstein publicó su teoría de la relatividad, que revolucionó nuestra comprensión del espacio y el tiempo. Y esto tiene implicaciones en la estructura electrónica de los átomos, que es lo que distorsiona los orbitales. Estos efectos causan que la reactividad sea igual a la del elemento de 2 grupos por encima (siendo como la del Rubidio). Esta teoría se basa en que cuando un objeto se mueve a velocidades cercanas a la de la luz, sus propiedades físicas cambian, incluyendo la forma de los orbitales, cuando el espacio y el tiempo se distorsionan.</p>
+			<p>La relatividad especial fue formulada por Albert Einstein en 1905 y la teoría general se presentó en 1915. En química, las correcciones relativistas son importantes sobre todo en átomos pesados: los electrones cercanos al núcleo pueden alcanzar velocidades para las que la descripción no relativista deja de ser suficiente. Estos efectos cambian las energías y el tamaño de algunos orbitales, y pueden influir en los enlaces y la reactividad. No implican una equivalencia exacta con un elemento situado dos grupos por encima; en el caso del francio, sus consecuencias se estudian principalmente mediante cálculos teóricos.</p>
             <img src="EfectoDeLaRelatividad.jpg" alt="Efecto de la relatividad">
-            <img src="Francio2.png" alt="Vista de un átomo de francio" title="Francio">
+            <img src="Orbital.png" alt="Vista de un orbital de un átomo" title="Orbital">
         </section>
-        <h5>Por último, hay que indicar que esto es un tema que aún se está investigando y que los efectos de la relatividad en la química son un área activa de estudio.</h5>
+        <section class="comentario">
+            <div class="introduccion-texto">
+                <h2>Comentario:</h2>
+                <p><em>En resumen, la reactividad del francio con el agua no se ha medido directamente debido a su escasez y radiactividad. Los cálculos teóricos sugieren que podría ser más reactivo que el cesio, pero los efectos relativistas complican la predicción. Por lo tanto, la comparación entre ambos elementos se basa en estimaciones teóricas y no en resultados experimentales confirmados.</em></p>
+                <h5><em>A tener en cuenta:<br>Por último, hay que indicar que esto es un tema que aún se está investigando y que los efectos de la relatividad en la química son un área activa de estudio.</em></h5>
+            </div>
+        </section>
 	</body>
 </html>
