@@ -30,7 +30,7 @@
 				border-radius: 8px;
 				box-shadow: 0 0 0 3px rgba(77, 157, 182, 0.13), 0 10px 28px rgba(0, 0, 0, 0.32);
 			}
-			body > h2 {text-align: center;}
+			.cuerpo > h2, .explicacion > h2 {text-align: center;}
 			p {max-width: 900px; margin-right: auto; margin-left: auto; text-align: center;}
 			.introduccion {display: flex; align-items: center; gap: 24px; max-width: 1000px; margin: 0 auto;}
             .comentario {display: flex; align-items: center; gap: 12px; max-width: 1000px; margin: 0 auto;}
@@ -40,10 +40,56 @@
 			.introduccion-texto h2 {margin-top: 0;}
 			.cuerpo p {font-weight: normal;}
 			.cuerpo img {display: block; margin: 0 auto;}
-            .explicacion img {display: block; margin: 0 auto;}
+			.explicacion-imagenes {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 24px;
+				margin: 24px auto;
+			}
+			.explicacion-imagenes img {display: block; width: min(44%, 440px); height: auto;}
+			.detalle {
+				max-width: 936px;
+				margin: 24px auto 28px;
+			}
+			.detalle-boton {
+				display: block;
+				box-sizing: border-box;
+				width: 100%;
+				padding: 11px 18px;
+				border: 1px solid rgba(177, 224, 238, 0.7);
+				border-radius: 6px;
+				background: rgba(14, 42, 58, 0.88);
+				color: #f1f4fa;
+				font: inherit;
+				cursor: pointer;
+				list-style: none;
+				text-align: center;
+			}
+			.detalle-boton::-webkit-details-marker {display: none;}
+			.detalle-boton::after {content: "+"; float: right;}
+			.detalle[open] .detalle-boton {border-radius: 6px 6px 0 0;}
+			.detalle[open] .detalle-boton::after {content: "−";}
+			.detalle-boton:hover, .detalle-boton:focus-visible {
+				background: rgba(35, 82, 101, 0.95);
+				outline: 2px solid #8bd3e3;
+				outline-offset: 3px;
+			}
+			.detalle-panel {
+				margin: 0;
+				padding: 8px 18px;
+				border: 1px solid rgba(177, 224, 238, 0.45);
+				border-top: 0;
+				border-radius: 0 0 6px 6px;
+				border-left: 3px solid #71c3d6;
+				background: rgba(5, 18, 31, 0.48);
+			}
 			@media (max-width: 600px) {
 				.introduccion {flex-direction: column;}
 				.introduccion img {width: min(100%, 320px);}
+				.explicacion-imagenes {flex-direction: column;}
+				.explicacion-imagenes img {width: min(100%, 360px);}
 			}
 		</style>
 	</head>
@@ -57,16 +103,34 @@
 				<p>La tendencia periódica permite predecir que el francio sería muy reactivo, pero su posición al final del grupo no basta para establecer con certeza si reacciona con el agua más rápido que el cesio. En un átomo tan pesado, los efectos relativistas modifican la energía y la distribución de los electrones; los cálculos teóricos consideran estos efectos al estimar sus propiedades. Por eso, es más preciso presentar la comparación como una predicción, no como un resultado experimental confirmado.</p>
 			</div>
 		</section>
-	  	<h2>El tamaño atómico y la distribución de los orbitales</h2>
-	 	<section class="cuerpo">
-			<p>Un orbital atómico describe la distribución de probabilidad de encontrar un electrón alrededor del núcleo; no representa una trayectoria fija. Sus formas y energías se obtienen al resolver la ecuación de Schrödinger para el átomo. Al aumentar el número de capas electrónicas, suele crecer el radio atómico, pero esto no significa que el tamaño por sí solo deforme todos los orbitales: la carga nuclear, el apantallamiento y las interacciones entre electrones también influyen.</p>
-	    <img src="FormulaSchodinger.png" alt="Fórmula de Schrödinger">
+        <section class="cuerpo">
+	  	    <h2>El tamaño atómico y la distribución de los orbitales</h2>
+            <p>Al aumentar el número de capas electrónicas, suele crecer el radio atómico, pero esto no significa que el tamaño por sí solo deforme todos los orbitales: la carga nuclear, el apantallamiento y las interacciones entre electrones también influyen.</p>
+	        <img src="FormulaSchodinger.png" alt="Fórmula de Schrödinger">
+			<details class="detalle">
+				<summary class="detalle-boton">¿Qué es un orbital?</summary>
+				<div class="detalle-panel">
+				<p>Un orbital atómico describe la distribución de probabilidad de encontrar un electrón alrededor del núcleo; no representa una trayectoria fija. Sus formas y energías se obtienen al resolver la ecuación de Schrödinger para el átomo. Al aumentar el número de capas electrónicas, suele crecer el radio atómico, pero esto no significa que el tamaño por sí solo deforme todos los orbitales: la carga nuclear, el apantallamiento y las interacciones entre electrones también influyen.</p>
+				<p>En mecánica cuántica, un orbital se representa mediante una función de onda, normalmente escrita como ψ. Su cuadrado, |ψ|², permite calcular la densidad de probabilidad de localizar el electrón en cada región del espacio. Las formas s, p, d y f corresponden a distintos estados cuánticos, no a caminos recorridos por los electrones.</p>
+				<p>La ecuación de Schrödinger permite determinar las funciones de onda y energías permitidas. Para describir átomos con varios electrones también se tienen en cuenta la repulsión entre electrones y el apantallamiento de la carga nuclear.</p>
+				</div>
+			</details>
         </section>
-        <h2>¿Cómo influyen los efectos relativistas en los orbitales?</h2>
-	    <section class="explicacion">
-			<p>La relatividad especial fue formulada por Albert Einstein en 1905 y la teoría general se presentó en 1915. En química, las correcciones relativistas son importantes sobre todo en átomos pesados: los electrones cercanos al núcleo pueden alcanzar velocidades para las que la descripción no relativista deja de ser suficiente. Estos efectos cambian las energías y el tamaño de algunos orbitales, y pueden influir en los enlaces y la reactividad. No implican una equivalencia exacta con un elemento situado dos grupos por encima; en el caso del francio, sus consecuencias se estudian principalmente mediante cálculos teóricos.</p>
-            <img src="EfectoDeLaRelatividad.jpg" alt="Efecto de la relatividad">
-            <img src="Orbital.png" alt="Vista de un orbital de un átomo" title="Orbital">
+        <section class="explicacion">
+            <h2>¿Cómo influyen los efectos relativistas en los orbitales?</h2>
+                <p>En química, las correcciones relativistas son importantes sobre todo en átomos pesados: los electrones cercanos al núcleo pueden alcanzar velocidades para las que la descripción no relativista deja de ser suficiente. Estos efectos cambian las energías y el tamaño de algunos orbitales, y pueden influir en los enlaces y la reactividad. No implican una equivalencia exacta con un elemento situado dos grupos por encima; en el caso del francio, sus consecuencias se estudian principalmente mediante cálculos teóricos.</p>
+                <div class="explicacion-imagenes">
+                    <img src="EfectoDeLaRelatividad.jpg" alt="Efecto de la relatividad">
+                    <img src="Orbital.png" alt="Vista de un orbital de un átomo" title="Orbital">
+                </div>
+                <details class="detalle">
+                    <summary class="detalle-boton">Efectos relativistas</summary>
+                    <div class="detalle-panel">
+                    <p>La relatividad especial fue formulada por Albert Einstein en 1905 y la teoría general se presentó en 1915. En química, las correcciones relativistas son importantes sobre todo en átomos pesados: los electrones cercanos al núcleo pueden alcanzar velocidades para las que la descripción no relativista deja de ser suficiente. Estos efectos cambian las energías y el tamaño de algunos orbitales, y pueden influir en los enlaces y la reactividad. No implican una equivalencia exacta con un elemento situado dos grupos por encima; en el caso del francio, sus consecuencias se estudian principalmente mediante cálculos teóricos.</p>
+                    <p>En átomos pesados, la carga positiva del núcleo atrae con fuerza a los electrones internos. Para describirlos con precisión hay que considerar la relatividad especial: cambian sus energías y su distribución alrededor del núcleo. Esto puede contraer y estabilizar algunos orbitales, y modificar indirectamente otros.</p>
+                    <p>Esos cambios afectan propiedades como los tamaños atómicos, los enlaces y la reactividad. En el francio, por su escasez y radiactividad, muchas de estas propiedades se estiman mediante cálculos teóricos en lugar de medirse directamente.</p>
+                    </div>
+                </details>
         </section>
         <section class="comentario">
             <div class="introduccion-texto">
