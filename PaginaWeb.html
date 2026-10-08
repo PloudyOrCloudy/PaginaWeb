@@ -31,9 +31,10 @@
 				box-shadow: 0 0 0 3px rgba(77, 157, 182, 0.13), 0 10px 28px rgba(0, 0, 0, 0.32);
 			}
 			.cuerpo > h2, .explicacion > h2 {text-align: center;}
-			p {max-width: 900px; margin-right: auto; margin-left: auto; text-align: center;}
-			.introduccion {display: flex; align-items: center; gap: 24px; max-width: 1000px; margin: 0 auto;}
-            .comentario {display: flex; align-items: center; gap: 12px; max-width: 1000px; margin: 0 auto;}
+			p {max-width: 1200px; margin-right: auto; margin-left: auto; text-align: center;}
+			b {max-width: 1500px; margin-right: 100px; margin-left: 50px; text-align: center;}
+			.introduccion {display: flex; align-items: center; gap: 24px; max-width: 1500px; margin: 0 auto;}
+            .comentario {display: flex; align-items: center; gap: 12px; max-width: 1500px; margin: 0 auto;}
 			.introduccion img {width: 240px; max-width: 100%; height: auto; object-fit: contain;}
 			.introduccion-texto {flex: 1; text-align: center;}
 			.introduccion-texto > h1, .introduccion-texto > h2, .introduccion-texto > p {text-align: center;}
@@ -85,6 +86,45 @@
 				border-left: 3px solid #71c3d6;
 				background: rgba(5, 18, 31, 0.48);
 			}
+			.recursos {
+				max-width: 900px;
+				margin: 28px auto;
+				text-align: left;
+			}
+			.recursos a {color: #8bd3e3;}
+			.recursos li {margin: 8px 0;}
+			.gif-player {
+				max-width: 720px;
+				margin: 18px auto;
+			}
+			.gif-player-stage {position: relative;}
+			.gif-player img, .gif-player canvas {
+				display: block;
+				width: 100%;
+				height: auto;
+				background: #000;
+				border-radius: 6px;
+			}
+			.gif-player [hidden] {display: none !important;}
+			.gif-player button {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				display: grid;
+				width: 64px;
+				aspect-ratio: 1;
+				place-items: center;
+				transform: translate(-50%, -50%);
+				border: 1px solid rgba(177, 224, 238, 0.7);
+				border-radius: 50%;
+				background: rgba(14, 42, 58, 0.88);
+				color: #f1f4fa;
+				font: 24px/1 "Space Grotesk", sans-serif;
+				cursor: pointer;
+			}
+			.gif-player button:hover {background: rgba(35, 82, 101, 0.95);}
+			.gif-player button:focus-visible {outline: 2px solid #8bd3e3; outline-offset: 3px;}
+			.gif-player button:disabled {cursor: wait; opacity: 0.65;}
 			@media (max-width: 600px) {
 				.introduccion {flex-direction: column;}
 				.introduccion img {width: min(100%, 320px);}
@@ -99,13 +139,11 @@
 			<div class="introduccion-texto">
                 <h1>¿Es el francio menos reactivo con el agua que el cesio?</h1>
 				<h2>El francio (Fr) es el elemento 87 y pertenece al grupo de los metales alcalinos. En este grupo, la reactividad suele aumentar al descender porque el electrón externo está, en promedio, más alejado del núcleo y se puede perder con mayor facilidad. El cesio es el metal alcalino estable más reactivo observado; en cambio, el francio es tan escaso y radiactivo que su reacción con el agua no se ha podido medir directamente en condiciones comparables.</h2>
-				<p>Entonces, ¿qué se puede decir sobre la reactividad del francio?</p>
+				<b>Entonces, ¿qué se puede decir sobre la reactividad del francio?</b>
 				<p>La tendencia periódica permite predecir que el francio sería muy reactivo, pero su posición al final del grupo no basta para establecer con certeza si reacciona con el agua más rápido que el cesio. En un átomo tan pesado, los efectos relativistas modifican la energía y la distribución de los electrones; los cálculos teóricos consideran estos efectos al estimar sus propiedades. Por eso, es más preciso presentar la comparación como una predicción, no como un resultado experimental confirmado.</p>
 			</div>
 		</section>
-        <section class="cuerpo">
-	  	    <h2>El tamaño atómico y la distribución de los orbitales</h2>
-            <p>Al aumentar el número de capas electrónicas, suele crecer el radio atómico, pero esto no significa que el tamaño por sí solo deforme todos los orbitales: la carga nuclear, el apantallamiento y las interacciones entre electrones también influyen.</p>
+		<section class="cuerpo">
 	        <img src="FormulaSchodinger.png" alt="Fórmula de Schrödinger">
 			<details class="detalle">
 				<summary class="detalle-boton">¿Qué es un orbital?</summary>
@@ -137,7 +175,58 @@
                 <h2>Comentario:</h2>
                 <p><em>En resumen, la reactividad del francio con el agua no se ha medido directamente debido a su escasez y radiactividad. Los cálculos teóricos sugieren que podría ser más reactivo que el cesio, pero los efectos relativistas complican la predicción. Por lo tanto, la comparación entre ambos elementos se basa en estimaciones teóricas y no en resultados experimentales confirmados.</em></p>
                 <h5><em>A tener en cuenta:<br>Por último, hay que indicar que esto es un tema que aún se está investigando y que los efectos de la relatividad en la química son un área activa de estudio.</em></h5>
+				<div class="recursos">
+					<h3>Enlaces y video</h3>
+					<ul>
+						<li><a href="https://es.wikipedia.org/wiki/Francio" target="_blank" rel="noopener noreferrer">¿Qué es el Francio?</a></li>
+						<li><a href="https://es.wikipedia.org/wiki/Cesio" target="_blank" rel="noopener noreferrer">¿Qué es el Cesio?</a></li>
+					</ul>
+					<h4>Video: reacción de los metales alcalinos con el agua</h4>
+					<div class="gif-player">
+						<div class="gif-player-stage">
+							<img id="alcalino-gif" src="Alcalino.gif" alt="Animación sobre la reacción de los metales alcalinos con el agua">
+							<canvas id="alcalino-fotograma" hidden aria-hidden="true"></canvas>
+							<button id="alcalino-control" type="button" aria-label="Pausar animación" aria-pressed="false" disabled title="Pausar animación">&#9208;</button>
+						</div>
+					</div>
+				</div>
             </div>
         </section>
+		<script>
+			const gif = document.getElementById("alcalino-gif");
+			const fotograma = document.getElementById("alcalino-fotograma");
+			const contexto = fotograma.getContext("2d");
+			const controlGif = document.getElementById("alcalino-control");
+
+			function habilitarControl() {
+				controlGif.disabled = false;
+			}
+
+			gif.addEventListener("load", habilitarControl);
+			if (gif.complete && gif.naturalWidth > 0) habilitarControl();
+
+			controlGif.addEventListener("click", () => {
+				const pausado = controlGif.getAttribute("aria-pressed") === "true";
+				if (pausado) {
+					fotograma.hidden = true;
+					gif.hidden = false;
+					controlGif.innerHTML = "&#9208;";
+					controlGif.setAttribute("aria-label", "Pausar animación");
+					controlGif.title = "Pausar animación";
+					controlGif.setAttribute("aria-pressed", "false");
+					return;
+				}
+
+				fotograma.width = gif.naturalWidth;
+				fotograma.height = gif.naturalHeight;
+				contexto.drawImage(gif, 0, 0);
+				gif.hidden = true;
+				fotograma.hidden = false;
+				controlGif.textContent = "▶";
+				controlGif.setAttribute("aria-label", "Reanudar animación");
+				controlGif.title = "Reanudar animación";
+				controlGif.setAttribute("aria-pressed", "true");
+			});
+		</script>
 	</body>
 </html>
